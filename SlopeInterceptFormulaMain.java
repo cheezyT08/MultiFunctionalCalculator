@@ -138,8 +138,12 @@ public class SlopeInterceptFormulaMain {
 				}
 				
 				//Setting Final String
-				String fString = ("The Slope Intercept Formula Is: Y="+m+"X+"+b);
-				
+				String fString;
+				if(b < 0) {
+					fString = ("The Slope Intercept Formula Is: Y = "+m+"X - "+Math.abs(b));
+				} else {
+					fString = ("The Slope Intercept Formula Is: Y = "+m+"X + "+b);
+				}
 				//Displaying Final String
 				JOptionPane.showMessageDialog(null, fString);
 			} catch (Exception e) {
