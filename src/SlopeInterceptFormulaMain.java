@@ -113,13 +113,9 @@ public class SlopeInterceptFormulaMain {
 				}
 				
 				//Setting Slope
-				m =(difY / difX);
+				m = (difY / difX);
 				
 				//Setting Y-Intercept
-				//////////////////////////////////////////////////////////
-				//Note To Self: TOOK HALF AN HOUR THINKING OF THIS 		//
-				//EQUATION!,COULD HAVE JUST USED AVERAGE OF Y1 And Y2!! //
-				//////////////////////////////////////////////////////////
 				midX = (m * inX1);
 				midY = (inY1);
 				
