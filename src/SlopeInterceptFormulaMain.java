@@ -2,7 +2,9 @@ package javaSlopeInterceptFormulaCalculator;
 
 //@author Torin
 
-import javax.swing.*; import java.awt.*; import java.awt.event.*;
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
 public class SlopeInterceptFormulaMain {
 	//Window and Panel
 	private static JFrame w = new JFrame();
@@ -13,7 +15,8 @@ public class SlopeInterceptFormulaMain {
 	private static JPanel p5 = new JPanel();
 	private static JPanel p6 = new JPanel();
 	private static JPanel p7 = new JPanel();
-	private static JPanel[] pArray= {p1, p2, p3, p4, p5, p6, p7};
+	private static JPanel[] pArray= {p1, p2, p3, 
+										p4, p5, p6, p7};
 	
 	//Text Fields
 	private static JTextField tf1X = new JTextField(6);
@@ -33,8 +36,8 @@ public class SlopeInterceptFormulaMain {
 	
 	//Error Message Function Using JOptionPane
 		public static void errorMsg(boolean b) {
-		JOptionPane.showMessageDialog(null, "Whoops! There Was"
-				+ " An Error.");
+		JOptionPane.showMessageDialog(null, "Whoops! There "
+				+ "Was An Error.");
 		if(b) {
 			System.out.println("Whoops! There Was An Error.");
 		}
@@ -95,10 +98,11 @@ public class SlopeInterceptFormulaMain {
 		public void actionPerformed(ActionEvent a) {
 			try {
 				//Getting Input
-				double inX1 = Double.parseDouble(tf1X.getText()), 
-						inY1 = Double.parseDouble(tf1Y.getText()), 
-						inX2 = Double.parseDouble(tf2X.getText()), 
-						inY2 = Double.parseDouble(tf2Y.getText());
+					double 
+					inX1=Double.parseDouble(tf1X.getText()), 
+					inY1=Double.parseDouble(tf1Y.getText()), 
+					inX2=Double.parseDouble(tf2X.getText()), 
+					inY2=Double.parseDouble(tf2Y.getText());
 				
 				//Other Vars
 				double difX, difY, b, midX, midY, m;
@@ -113,7 +117,7 @@ public class SlopeInterceptFormulaMain {
 				}
 				
 				//Setting Slope
-				m = (difY / difX);
+				m =(difY / difX);
 				
 				//Setting Y-Intercept
 				midX = (m * inX1);
@@ -135,10 +139,54 @@ public class SlopeInterceptFormulaMain {
 				
 				//Setting Final String
 				String fString;
-				if(b < 0) {
-					fString = ("The Slope Intercept Formula Is: Y = "+m+"X - "+Math.abs(b));
+				if(m%1==0&&b%1==0) {
+					if(b<0) {
+						fString=("The Slope Intercept "
+								+ "Formula"
+								+ " Is: Y = "+(int)m+"X - "+
+								(int)(Math.abs(b)));
+					} else {
+						fString=("The Slope Intercept "
+								+ "Formula"
+								+ " Is: Y = "+(int)m+"X + "+
+								(int)b);
+					}
+				} else if(b%1==0) {
+					if(b<0) {
+						fString=("The Slope Intercept "
+								+ "Formula"
+								+" Is: Y = "+m+"X - "
+								+Math.abs((int)b));
+					} else {
+						fString=("The Slope Intercept "
+								+ "Formula"
+								+ " Is: Y = "+m+"X + "
+								+(int)b);
+					}
+				} else if(m%1==0) {
+					if(b<0) {
+						fString=("The Slope Intercept "
+								+ "Formula"
+								+ " Is: Y = "+(int)m+"X - "
+								+Math.abs(b));
+					} else {
+						fString=("The Slope Intercept "
+								+ "Formula"
+								+ " Is: Y = "
+								+(int)m+"X + "+b);
+					}
 				} else {
-					fString = ("The Slope Intercept Formula Is: Y = "+m+"X + "+b);
+					if(b<0) {
+						fString=("The Slope Intercept "
+								+ "Formula"
+								+ " Is: Y = "+m+"X - "
+								+Math.abs(b));
+					} else {
+						fString=("The Slope Intercept "
+								+ "Formula"
+								+ " Is: Y = "
+								+m+"X + "+b);
+					}
 				}
 				//Displaying Final String
 				JOptionPane.showMessageDialog(null, fString);
