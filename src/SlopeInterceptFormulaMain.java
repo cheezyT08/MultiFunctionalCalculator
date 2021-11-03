@@ -16,7 +16,7 @@ public class SlopeInterceptFormulaMain {
 	private static JPanel p6 = new JPanel();
 	private static JPanel p7 = new JPanel();
 	private static JPanel[] pArray= {p1, p2, p3, 
-										p4, p5, p6, p7};
+					 p4, p5, p6, p7};
 	
 	//Text Fields
 	private static JTextField tf1X = new JTextField(6);
