@@ -18,7 +18,7 @@ public class Main {
 		JTabbedPane tp = new JTabbedPane();
 				
 		//Start Settings
-		w.setTitle("Slope Intercept Formula Calculator");
+		w.setTitle("Calculator");
 		w.setDefaultCloseOperation(3);
 		w.setLayout(new BorderLayout());
 		w.setResizable(false);
